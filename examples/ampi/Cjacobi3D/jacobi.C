@@ -26,7 +26,7 @@ int NX, NY, NZ;
 
 int number_of_nodes_init = -1;
 int number_of_nodes_new = -1;
-int restart = 0;
+int checkpoint_iteration = -1;
 
 int read_file_content(const char *filename) {
   FILE *file = fopen(filename, "r");
@@ -241,8 +241,13 @@ int main(int ac, char** av)
       }
 
     number_of_nodes_new = -1;
-    MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
-    #ifdef AMPI
+    checkpoint_iteration = iter;
+    MPI_Barrier(MPI_COMM_WORLD);
+    
+    }
+
+    if(iter == (checkpoint_iteration+1)){
+      #ifdef AMPI
       // put the barrier here so all the nodes exit together
       MPI_Barrier(MPI_COMM_WORLD);
       CkExit(RERUN);
@@ -305,8 +310,7 @@ int main(int ac, char** av)
     starttime = MPI_Wtime();
 
   #ifdef AMPI
-    if (iter % 10 == 0){
-      // AMPI_Migrate(AMPI_INFO_LB_SYNC);
+    if (iter == checkpoint_iteration){
       AMPI_Migrate(chkpt_info);
     }
   #endif
