@@ -1,12 +1,69 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include "mpi.h"
+#include "converse.h"
+#include "conv-ccs.h"
+#include "charm++.h"
 
-#define DIMX 100
-#define DIMY 100
-#define DIMZ 100
+
+typedef enum {
+  SUCCESS = 0,
+  FAILURE = 1,
+  RERUN = 2
+} ExitCode;
+
+#define DIMX 400
+#define DIMY 400
+#define DIMZ 400
+
+#define CHKPT_TO_FILE 1
+
+#define FILE_NAME "nodes" 
 
 int NX, NY, NZ;
+
+int number_of_nodes_init = -1;
+int number_of_nodes_new = -1;
+
+int read_file_content(const char *filename) {
+  FILE *file = fopen(filename, "r");
+    if (!file) {
+        perror("Error opening file");
+        return -1;
+    }
+
+    char line[1024];
+    int count = 0;
+
+    while (fgets(line, sizeof(line), file)) {
+        char *ptr = strstr(line, "host");
+        if (ptr) {
+            ptr += 4; // Move past "host"
+            while (*ptr && isspace((unsigned char)*ptr)) ptr++; // Skip spaces
+            if (*ptr) count++; // If there's another name, count it
+        }
+    }
+
+    fclose(file);
+    return count;
+}
+
+
+ // added handler to communicate with the client
+ void handler(char *msg)
+ {
+   if(CcsIsRemoteRequest()) {
+     char answer[1024];
+     char *name=msg+CmiMsgHeaderSizeBytes;
+     sprintf(answer, "hello %s from processor %d\n", name, CmiMyPe());
+     CmiPrintf("CCS Ping handler called on %d with '%s'.\n",CmiMyPe(),name);
+     CcsSendReply(strlen(answer)+1, answer);
+
+     number_of_nodes_new = read_file_content(FILE_NAME);
+   }
+ }
 
 class chunk {
   public:
@@ -110,6 +167,23 @@ int main(int ac, char** av)
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+  int number_of_nodes_init = read_file_content(FILE_NAME);
+  if (number_of_nodes_init >= 0 && rank==0) {
+    printf("Number of Processors detected in the file: %d\n", number_of_nodes_init);
+  }
+  
+  CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
+  CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
+
+  #ifdef AMPI
+    MPI_Info chkpt_info;
+    MPI_Info_create(&chkpt_info);
+    #if CHKPT_TO_FILE
+      MPI_Info_set(chkpt_info, "ampi_checkpoint", "to_file=log");
+    #endif
+
+  #endif
+
   if (ac < 4) {
     if (rank == 0)
       printf("Usage: jacobi X Y Z [nIter].\n");
@@ -153,6 +227,26 @@ int main(int ac, char** av)
   starttime = MPI_Wtime();
 
   for(iter=1; iter<=niter; iter++) {
+
+    // Before checking for shrink/expand, synchronize the value across all ranks
+    MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
+
+    // check for a change in the number of nodes
+    if (number_of_nodes_new != -1 && number_of_nodes_new != number_of_nodes_init){
+      if (number_of_nodes_new > number_of_nodes_init){
+        if (rank == 0) printf("Expand requested.\n");
+      }
+      else {
+        if(rank == 0) printf("Shrink requested.\n");
+      }
+
+      // number_of_nodes_new = -1;
+
+      // put the barrier here so all the nodes exit together
+      MPI_Barrier(MPI_COMM_WORLD);
+      CkExit(RERUN);
+    }
+
     maxerr = 0.0;
     copyout(cp->sbxm, cp->t, 1, 1, 1, DIMY, 1, DIMZ);
     copyout(cp->sbxp, cp->t, DIMX, DIMX, 1, DIMY, 1, DIMZ);
@@ -208,11 +302,13 @@ int main(int ac, char** av)
       printf("iter %d time: %lf maxerr: %lf\n", iter, itertime / size, maxerr);
     starttime = MPI_Wtime();
 #ifdef AMPI
-    if(iter%10 == 5) {
-      AMPI_Migrate(AMPI_INFO_LB_SYNC);
+    if(iter%17 == 0) {
+      // AMPI_Migrate(AMPI_INFO_LB_SYNC);
+      AMPI_Migrate(chkpt_info);
     }
 #endif
   }
+  MPI_Info_free(&chkpt_info);
   MPI_Finalize();
   return 0;
 }
