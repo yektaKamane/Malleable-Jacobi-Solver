@@ -10,8 +10,8 @@
 
 typedef enum {
   SUCCESS = 0,
-  FAILURE = 1,
-  RERUN = 2
+  FAILURE = 101,
+  RERUN = 102
 } ExitCode;
 
 #define DIMX 400
@@ -26,6 +26,7 @@ int NX, NY, NZ;
 
 int number_of_nodes_init = -1;
 int number_of_nodes_new = -1;
+int restart = 0;
 
 int read_file_content(const char *filename) {
   FILE *file = fopen(filename, "r");
@@ -227,7 +228,6 @@ int main(int ac, char** av)
   starttime = MPI_Wtime();
 
   for(iter=1; iter<=niter; iter++) {
-
     // Before checking for shrink/expand, synchronize the value across all ranks
     MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -240,11 +240,13 @@ int main(int ac, char** av)
         if(rank == 0) printf("Shrink requested.\n");
       }
 
-      // number_of_nodes_new = -1;
-
+    number_of_nodes_new = -1;
+    MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
+    #ifdef AMPI
       // put the barrier here so all the nodes exit together
       MPI_Barrier(MPI_COMM_WORLD);
       CkExit(RERUN);
+    #endif
     }
 
     maxerr = 0.0;
@@ -301,12 +303,14 @@ int main(int ac, char** av)
     if (rank == 0)
       printf("iter %d time: %lf maxerr: %lf\n", iter, itertime / size, maxerr);
     starttime = MPI_Wtime();
-#ifdef AMPI
-    if(iter%17 == 0) {
+
+  #ifdef AMPI
+    if (iter % 10 == 0){
       // AMPI_Migrate(AMPI_INFO_LB_SYNC);
       AMPI_Migrate(chkpt_info);
     }
-#endif
+  #endif
+
   }
   MPI_Info_free(&chkpt_info);
   MPI_Finalize();
