@@ -50,3 +50,4 @@ charmrun
 ampirun
 pgm
 *.swp
+examples/ampi/Cjacobi3D/log/sub0/arr_*.dat
