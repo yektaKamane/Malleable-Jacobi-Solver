@@ -59,10 +59,16 @@ int read_file_content(const char *filename) {
      char answer[1024];
      char *name=msg+CmiMsgHeaderSizeBytes;
      sprintf(answer, "hello %s from processor %d\n", name, CmiMyPe());
-     CmiPrintf("CCS Ping handler called on %d with '%s'.\n",CmiMyPe(),name);
+     CmiPrintf("CCS shr_exp handler called on %d with '%s'.\n",CmiMyPe(),name);
      CcsSendReply(strlen(answer)+1, answer);
 
-     number_of_nodes_new = read_file_content(FILE_NAME);
+     int file_nodes = read_file_content(FILE_NAME);
+    //  printf("HANDLER:::Number of nodes init: %d\n", number_of_nodes_init);
+    //  printf("HANDLER:::Number of nodes file: %d\n", file_nodes);
+     if (file_nodes != number_of_nodes_init){
+        number_of_nodes_new = file_nodes;
+        printf("HANDLER:::Number of Processors detected in the file: %d\n", number_of_nodes_new);
+     }
    }
  }
 
@@ -168,13 +174,15 @@ int main(int ac, char** av)
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-  int number_of_nodes_init = read_file_content(FILE_NAME);
+  number_of_nodes_init = read_file_content(FILE_NAME);
   if (number_of_nodes_init >= 0 && rank==0) {
     printf("Number of Processors detected in the file: %d\n", number_of_nodes_init);
   }
-  
-  CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
-  CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
+
+  #ifdef AMPI
+    CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
+    CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
+  #endif
 
   #ifdef AMPI
     MPI_Info chkpt_info;
@@ -228,6 +236,8 @@ int main(int ac, char** av)
   starttime = MPI_Wtime();
 
   for(iter=1; iter<=niter; iter++) {
+    printf("%d :Number of nodes init: %d\n", rank, number_of_nodes_init);
+    printf("%d: Number of nodes new: %d\n", rank, number_of_nodes_new);
     // Before checking for shrink/expand, synchronize the value across all ranks
     MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -240,18 +250,20 @@ int main(int ac, char** av)
         if(rank == 0) printf("Shrink requested.\n");
       }
 
-    number_of_nodes_new = -1;
+    // number_of_nodes_new = -1;
     checkpoint_iteration = iter;
     MPI_Barrier(MPI_COMM_WORLD);
     
     }
 
     if(iter == (checkpoint_iteration+1)){
+      // printf("here");
       #ifdef AMPI
+      // printf("here2");
       // put the barrier here so all the nodes exit together
-      MPI_Barrier(MPI_COMM_WORLD);
-      CkExit(RERUN);
-    #endif
+        MPI_Barrier(MPI_COMM_WORLD);
+        CkExit(RERUN);
+      #endif
     }
 
     maxerr = 0.0;
@@ -312,6 +324,9 @@ int main(int ac, char** av)
   #ifdef AMPI
     if (iter == checkpoint_iteration){
       AMPI_Migrate(chkpt_info);
+      CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
+      CmiPrintf("CCS Handlers re-registered after checkpoint restart.\n");
+      number_of_nodes_init = read_file_content(FILE_NAME);
     }
   #endif
 
