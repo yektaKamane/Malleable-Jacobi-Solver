@@ -63,11 +63,8 @@ int read_file_content(const char *filename) {
      CcsSendReply(strlen(answer)+1, answer);
 
      int file_nodes = read_file_content(FILE_NAME);
-    //  printf("HANDLER:::Number of nodes init: %d\n", number_of_nodes_init);
-    //  printf("HANDLER:::Number of nodes file: %d\n", file_nodes);
      if (file_nodes != number_of_nodes_init){
         number_of_nodes_new = file_nodes;
-        printf("HANDLER:::Number of Processors detected in the file: %d\n", number_of_nodes_new);
      }
    }
  }
@@ -236,8 +233,6 @@ int main(int ac, char** av)
   starttime = MPI_Wtime();
 
   for(iter=1; iter<=niter; iter++) {
-    printf("%d :Number of nodes init: %d\n", rank, number_of_nodes_init);
-    printf("%d: Number of nodes new: %d\n", rank, number_of_nodes_new);
     // Before checking for shrink/expand, synchronize the value across all ranks
     MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -250,16 +245,13 @@ int main(int ac, char** av)
         if(rank == 0) printf("Shrink requested.\n");
       }
 
-    // number_of_nodes_new = -1;
     checkpoint_iteration = iter;
     MPI_Barrier(MPI_COMM_WORLD);
     
     }
 
     if(iter == (checkpoint_iteration+1)){
-      // printf("here");
       #ifdef AMPI
-      // printf("here2");
       // put the barrier here so all the nodes exit together
         MPI_Barrier(MPI_COMM_WORLD);
         CkExit(RERUN);
