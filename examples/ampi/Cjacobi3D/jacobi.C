@@ -14,13 +14,13 @@ typedef enum {
   RERUN = 102
 } ExitCode;
 
-#define DIMX 400
-#define DIMY 400
-#define DIMZ 400
+#define DIMX 200
+#define DIMY 200
+#define DIMZ 200
 
 #define CHKPT_TO_FILE 1
 
-#define FILE_NAME "nodes" 
+#define FILE_NAME "mynodelist" 
 
 int NX, NY, NZ;
 
@@ -178,7 +178,8 @@ int main(int ac, char** av)
 
   #ifdef AMPI
     CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
-    CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
+    if (!rank)
+      CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
   #endif
 
   #ifdef AMPI
@@ -317,7 +318,8 @@ int main(int ac, char** av)
     if (iter == checkpoint_iteration){
       AMPI_Migrate(chkpt_info);
       CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
-      CmiPrintf("CCS Handlers re-registered after checkpoint restart.\n");
+      if (!rank)
+        CmiPrintf("CCS Handlers re-registered after checkpoint restart.\n");
       number_of_nodes_init = read_file_content(FILE_NAME);
     }
   #endif
