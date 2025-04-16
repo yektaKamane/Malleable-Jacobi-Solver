@@ -24,19 +24,18 @@ echo "nodes file created successfully!"
 # Calculate the total number of non-empty lines in mynodelist
 # new_node_number=$(grep -cve '^\s*$' mynodelist)
 
-# If exit code is 0, exit
+# First run
 ./charmrun +p$SLURM_NPROCS ./jacobi 1 1 $SLURM_NPROCS 100 +balancer GreedyLB ++nodelist ./mynodelist ++server ++server-port 1234 ++verbose
+exit_code=$?
 
-# If exit code is 102
-while [[ $? -eq 102 ]]; do
-    
+# Loop if exit code is 102
+while [[ $exit_code -eq 102 ]]; do
     new_node_number=$(grep -c '^host' mynodelist)
     echo "Jacobi exited with code 102. Restarting with $new_node_number nodes."
 
     ./charmrun +p$new_node_number ./jacobi 1 1 $new_node_number 100 +balancer GreedyLB ++nodelist ./mynodelist ++server ++server-port 1234 ++verbose +restart log
     exit_code=$?
-    if [[ $exit_code -eq 0 ]]; then
-        echo "Jacobi completed successfully after restart. Exiting."
-        exit 0
-    fi
 done
+
+# Exit with the final code (0 or non-zero != 102)
+exit $exit_code

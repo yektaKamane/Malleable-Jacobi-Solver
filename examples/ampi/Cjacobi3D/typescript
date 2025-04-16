@@ -1,0 +1,1043 @@
+Script started on 2025-04-16 14:38:31+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="52" LINES="33"]
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ ls
+[?2004l[0m[01;32mampirun[0m       jacobi-get.o  [01;34mlog[0m
+[01;32mcharmrun[0m      [01;32mjacobi.iso[0m    Makefile
+[01;32mjacobi[0m        jacobi.iso.o  mynodelist
+jacobi.C      jacobi.o      [01;32mscript.sh[0m
+jacobi-cpp.C  [01;32mjacobi.pup[0m    typescript
+[01;32mjacobi-get[0m    [01;32mjacobi.tls[0m
+jacobi-get.C  jacobi.tls.o
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ ls -a
+[?2004l[0m[01;34m.[0m         jacobi-cpp.C  jacobi.o      mynodelist
+[01;34m..[0m        [01;32mjacobi-get[0m    [01;32mjacobi.pup[0m    [01;32mscript.sh[0m
+[01;32mampirun[0m   jacobi-get.C  [01;32mjacobi.tls[0m    typescript
+[01;32mcharmrun[0m  jacobi-get.o  jacobi.tls.o
+[01;32mjacobi[0m    [01;32mjacobi.iso[0m    [01;34mlog[0m
+jacobi.C  jacobi.iso.o  Makefile
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ ls -a[K./client awnode05 1234  4  8[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./client awnode05 1234  4  8[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -a[Kscript.sh
+[?2004lbash: script.sh: command not found
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ script.sh.script.sh/script.sh
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 42149
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 42149 18438 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 42149 18438 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=33182)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=53246)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=60645)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=35802)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=58107)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=51958)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=59752)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=44025)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.572 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.220731 maxerr: 8040.200000
+iter 2 time: 0.106716 maxerr: 6753.768000
+iter 3 time: 0.197858 maxerr: 5878.994240
+iter 4 time: 0.105291 maxerr: 5251.215424
+iter 5 time: 0.201765 maxerr: 4779.537413
+iter 6 time: 0.106239 maxerr: 4411.426028
+iter 7 time: 0.104953 maxerr: 4115.103625
+iter 8 time: 0.105322 maxerr: 3870.492431
+iter 9 time: 0.200255 maxerr: 3664.383788
+iter 10 time: 0.106280 maxerr: 3487.764218
+iter 11 time: 0.106213 maxerr: 3334.279494
+iter 12 time: 0.197830 maxerr: 3199.319957
+iter 13 time: 0.105877 maxerr: 3079.456715
+iter 14 time: 0.105935 maxerr: 2972.082761
+iter 15 time: 0.105582 maxerr: 2875.177655
+iter 16 time: 0.105745 maxerr: 2787.148994
+iter 17 time: 0.198621 maxerr: 2706.722967
+iter 18 time: 0.106236 maxerr: 2632.867119
+iter 19 time: 0.105655 maxerr: 2564.734737
+iter 20 time: 0.105618 maxerr: 2501.624089
+iter 21 time: 0.200504 maxerr: 2442.948063
+iter 22 time: 0.106055 maxerr: 2388.211210
+iter 23 time: 0.106340 maxerr: 2336.992158
+iter 24 time: 0.105655 maxerr: 2288.929976
+iter 25 time: 0.198975 maxerr: 2243.713477
+iter 26 time: 0.104177 maxerr: 2201.072752
+iter 27 time: 0.104586 maxerr: 2160.772389
+iter 28 time: 0.103685 maxerr: 2122.606011
+iter 29 time: 0.197044 maxerr: 2086.391835
+iter 30 time: 0.104187 maxerr: 2051.969026
+iter 31 time: 0.103717 maxerr: 2019.194696
+iter 32 time: 0.198256 maxerr: 1987.941413
+iter 33 time: 0.104617 maxerr: 1958.095113
+iter 34 time: 0.195944 maxerr: 1929.553354
+iter 35 time: 0.104224 maxerr: 1902.223835
+iter 36 time: 0.104377 maxerr: 1876.023142
+iter 37 time: 0.104287 maxerr: 1850.875679
+iter 38 time: 0.104204 maxerr: 1826.712749
+iter 39 time: 0.196432 maxerr: 1803.471766
+iter 40 time: 0.115058 maxerr: 1781.095576
+iter 41 time: 0.103618 maxerr: 1759.531862
+iter 42 time: 0.103930 maxerr: 1738.732631
+iter 43 time: 0.111952 maxerr: 1718.653769
+iter 44 time: 0.124721 maxerr: 1699.254641
+iter 45 time: 0.104443 maxerr: 1680.497753
+iter 46 time: 0.125378 maxerr: 1662.348440
+iter 47 time: 0.110807 maxerr: 1644.774603
+iter 48 time: 0.104270 maxerr: 1627.746465
+iter 49 time: 0.198247 maxerr: 1611.236363
+iter 50 time: 0.123577 maxerr: 1595.218560
+iter 51 time: 0.103514 maxerr: 1579.669069
+iter 52 time: 0.123646 maxerr: 1564.565513
+iter 53 time: 0.197536 maxerr: 1549.886980
+iter 54 time: 0.122176 maxerr: 1535.613906
+iter 55 time: 0.109883 maxerr: 1521.727966
+iter 56 time: 0.107576 maxerr: 1508.211973
+iter 57 time: 0.195728 maxerr: 1495.049789
+iter 58 time: 0.195471 maxerr: 1482.226245
+iter 59 time: 0.120632 maxerr: 1469.727066
+iter 60 time: 0.107437 maxerr: 1457.538808
+iter 61 time: 0.104552 maxerr: 1445.648791
+iter 62 time: 0.104717 maxerr: 1434.045050
+iter 63 time: 0.104718 maxerr: 1422.716278
+iter 64 time: 0.197617 maxerr: 1411.651788
+iter 65 time: 0.119656 maxerr: 1400.841462
+iter 66 time: 0.103960 maxerr: 1390.275717
+iter 67 time: 0.104291 maxerr: 1379.945468
+iter 68 time: 0.196585 maxerr: 1369.842096
+iter 69 time: 0.104218 maxerr: 1359.957418
+iter 70 time: 0.104137 maxerr: 1350.283657
+iter 71 time: 0.104047 maxerr: 1340.813417
+iter 72 time: 0.195451 maxerr: 1331.539663
+iter 73 time: 0.103898 maxerr: 1322.455692
+iter 74 time: 0.195678 maxerr: 1313.555120
+iter 75 time: 0.104269 maxerr: 1304.831858
+iter 76 time: 0.196728 maxerr: 1296.280096
+iter 77 time: 0.196551 maxerr: 1287.894288
+iter 78 time: 0.103488 maxerr: 1279.669136
+iter 79 time: 0.103902 maxerr: 1271.599574
+iter 80 time: 0.196898 maxerr: 1263.680760
+iter 81 time: 0.104035 maxerr: 1255.908057
+iter 82 time: 0.197158 maxerr: 1248.277028
+iter 83 time: 0.104095 maxerr: 1240.783420
+iter 84 time: 0.104319 maxerr: 1233.423158
+iter 85 time: 0.198495 maxerr: 1226.192334
+iter 86 time: 0.103323 maxerr: 1219.087198
+iter 87 time: 0.198349 maxerr: 1212.104152
+iter 88 time: 0.103679 maxerr: 1205.239737
+iter 89 time: 0.196304 maxerr: 1198.490634
+iter 90 time: 0.103935 maxerr: 1191.853650
+iter 91 time: 0.103791 maxerr: 1185.325714
+iter 92 time: 0.103899 maxerr: 1178.903874
+iter 93 time: 0.197331 maxerr: 1172.585285
+iter 94 time: 0.103598 maxerr: 1166.367211
+iter 95 time: 0.196241 maxerr: 1160.247015
+iter 96 time: 0.196984 maxerr: 1154.222156
+iter 97 time: 0.103987 maxerr: 1148.290184
+iter 98 time: 0.103256 maxerr: 1142.448737
+iter 99 time: 0.104556 maxerr: 1136.695536
+iter 100 time: 0.198670 maxerr: 1131.028381
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 0.
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ ./script.sh
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 41451
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 41451 18494 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 41451 18494 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=51033)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=50420)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=49300)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=34383)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=54993)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=50840)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=50877)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=41888)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.426 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.221191 maxerr: 8040.200000
+iter 2 time: 0.106495 maxerr: 6753.768000
+iter 3 time: 0.105358 maxerr: 5878.994240
+iter 4 time: 0.108330 maxerr: 5251.215424
+iter 5 time: 0.200078 maxerr: 4779.537413
+iter 6 time: 0.106452 maxerr: 4411.426028
+iter 7 time: 0.105140 maxerr: 4115.103625
+iter 8 time: 0.105356 maxerr: 3870.492431
+iter 9 time: 0.105665 maxerr: 3664.383788
+iter 10 time: 0.200681 maxerr: 3487.764218
+iter 11 time: 0.105472 maxerr: 3334.279494
+iter 12 time: 0.105932 maxerr: 3199.319957
+iter 13 time: 0.106065 maxerr: 3079.456715
+iter 14 time: 0.105470 maxerr: 2972.082761
+iter 15 time: 0.105732 maxerr: 2875.177655
+iter 16 time: 0.105514 maxerr: 2787.148994
+iter 17 time: 0.105412 maxerr: 2706.722967
+iter 18 time: 0.105697 maxerr: 2632.867119
+iter 19 time: 0.105419 maxerr: 2564.734737
+iter 20 time: 0.105650 maxerr: 2501.624089
+iter 21 time: 0.200748 maxerr: 2442.948063
+^C
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make clean
+[?2004lrm -f *.o jacobi *~ moduleinit.C charmrun conv-host jacobi-cpp jacobi.iso jacobi-get jacobi.tls ampirun
+rm -rf 40 80 120
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make
+[?2004l../../../bin/ampicxx  -c jacobi.C 
+../../../bin/ampicxx  -o jacobi jacobi.o -lm
+../../../bin/ampicxx  -o jacobi.pup jacobi.o -memory default -lm
+../../../bin/ampicxx  -c jacobi-get.C
+../../../bin/ampicxx  -o jacobi-get jacobi-get.o -lm
+../../../bin/ampicxx  -c -tlsglobals jacobi.C -o jacobi.tls.o
+../../../bin/ampicxx  -o jacobi.tls jacobi.tls.o -tlsglobals
+../../../bin/ampicxx  -c -DNO_PUP jacobi.C -o jacobi.iso.o
+../../../bin/ampicxx  -o jacobi.iso jacobi.iso.o -memory isomalloc
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ make clean./script.sh
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 40793
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 40793 19257 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 40793 19257 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=44133)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=35655)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=55271)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=37482)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=57966)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=58154)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=58416)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=45639)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.430 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.203161 maxerr: 8040.200000
+iter 2 time: 0.106565 maxerr: 6753.768000
+iter 3 time: 0.105895 maxerr: 5878.994240
+iter 4 time: 0.104818 maxerr: 5251.215424
+iter 5 time: 0.198911 maxerr: 4779.537413
+iter 6 time: 0.105266 maxerr: 4411.426028
+iter 7 time: 0.199965 maxerr: 4115.103625
+iter 8 time: 0.105365 maxerr: 3870.492431
+iter 9 time: 0.200044 maxerr: 3664.383788
+iter 10 time: 0.106336 maxerr: 3487.764218
+iter 11 time: 0.106052 maxerr: 3334.279494
+iter 12 time: 0.105846 maxerr: 3199.319957
+iter 13 time: 0.105933 maxerr: 3079.456715
+iter 14 time: 0.105619 maxerr: 2972.082761
+iter 15 time: 0.105499 maxerr: 2875.177655
+iter 16 time: 0.105936 maxerr: 2787.148994
+iter 17 time: 0.200548 maxerr: 2706.722967
+iter 18 time: 0.106960 maxerr: 2632.867119
+iter 19 time: 0.105937 maxerr: 2564.734737
+iter 20 time: 0.106275 maxerr: 2501.624089
+iter 21 time: 0.200329 maxerr: 2442.948063
+iter 22 time: 0.105985 maxerr: 2388.211210
+iter 23 time: 0.106069 maxerr: 2336.992158
+iter 24 time: 0.188182 maxerr: 2288.929976
+iter 25 time: 0.161966 maxerr: 2243.713477
+iter 26 time: 0.161877 maxerr: 2201.072752
+iter 27 time: 0.161419 maxerr: 2160.772389
+iter 28 time: 0.168987 maxerr: 2122.606011
+iter 29 time: 0.105907 maxerr: 2086.391835
+iter 30 time: 0.104213 maxerr: 2051.969026
+iter 31 time: 0.104375 maxerr: 2019.194696
+iter 32 time: 0.200873 maxerr: 1987.941413
+iter 33 time: 0.104028 maxerr: 1958.095113
+iter 34 time: 0.131506 maxerr: 1929.553354
+iter 35 time: 0.134846 maxerr: 1902.223835
+iter 36 time: 0.110882 maxerr: 1876.023142
+iter 37 time: 0.200543 maxerr: 1850.875679
+iter 38 time: 0.104679 maxerr: 1826.712749
+iter 39 time: 0.104631 maxerr: 1803.471766
+iter 40 time: 0.104278 maxerr: 1781.095576
+iter 41 time: 0.104267 maxerr: 1759.531862
+iter 42 time: 0.104565 maxerr: 1738.732631
+iter 43 time: 0.198517 maxerr: 1718.653769
+iter 44 time: 0.104516 maxerr: 1699.254641
+iter 45 time: 0.104244 maxerr: 1680.497753
+iter 46 time: 0.104481 maxerr: 1662.348440
+iter 47 time: 0.103826 maxerr: 1644.774603
+iter 48 time: 0.103995 maxerr: 1627.746465
+iter 49 time: 0.196241 maxerr: 1611.236363
+iter 50 time: 0.103525 maxerr: 1595.218560
+iter 51 time: 0.198795 maxerr: 1579.669069
+iter 52 time: 0.103502 maxerr: 1564.565513
+iter 53 time: 0.198740 maxerr: 1549.886980
+iter 54 time: 0.103294 maxerr: 1535.613906
+iter 55 time: 0.103957 maxerr: 1521.727966
+iter 56 time: 0.105472 maxerr: 1508.211973
+iter 57 time: 0.103980 maxerr: 1495.049789
+iter 58 time: 0.103619 maxerr: 1482.226245
+iter 59 time: 0.103829 maxerr: 1469.727066
+iter 60 time: 0.104261 maxerr: 1457.538808
+CCS shr_exp handler called on 0 with 'client message'.
+iter 61 time: 0.104214 maxerr: 1445.648791
+Shrink requested.
+iter 62 time: 0.104167 maxerr: 1434.045050
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 4.896043s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+Jacobi exited with code 102. Restarting with 7 nodes.
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 34307
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 34307 19339 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 34307 19339 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 2
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=52247)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=51699)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=44785)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=40320)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=43657)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=57076)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=58168)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.302 seconds.
+Charm++> Running in non-SMP mode: 7 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 63 time: 1.608205 maxerr: 1422.716278
+iter 64 time: 0.208125 maxerr: 1411.651788
+iter 65 time: 0.207175 maxerr: 1400.841462
+iter 66 time: 0.207176 maxerr: 1390.275717
+iter 67 time: 0.299526 maxerr: 1379.945468
+iter 68 time: 0.207580 maxerr: 1369.842096
+iter 69 time: 0.207283 maxerr: 1359.957418
+iter 70 time: 0.207362 maxerr: 1350.283657
+iter 71 time: 0.207241 maxerr: 1340.813417
+iter 72 time: 0.207560 maxerr: 1331.539663
+iter 73 time: 0.206698 maxerr: 1322.455692
+iter 74 time: 0.207158 maxerr: 1313.555120
+iter 75 time: 0.207233 maxerr: 1304.831858
+iter 76 time: 0.207452 maxerr: 1296.280096
+iter 77 time: 0.207511 maxerr: 1287.894288
+iter 78 time: 0.207902 maxerr: 1279.669136
+iter 79 time: 0.207684 maxerr: 1271.599574
+iter 80 time: 0.207518 maxerr: 1263.680760
+iter 81 time: 0.207447 maxerr: 1255.908057
+iter 82 time: 0.207758 maxerr: 1248.277028
+iter 83 time: 0.206946 maxerr: 1240.783420
+iter 84 time: 0.207523 maxerr: 1233.423158
+iter 85 time: 0.207235 maxerr: 1226.192334
+iter 86 time: 0.206990 maxerr: 1219.087198
+iter 87 time: 0.207717 maxerr: 1212.104152
+iter 88 time: 0.207062 maxerr: 1205.239737
+iter 89 time: 0.207745 maxerr: 1198.490634
+iter 90 time: 0.207421 maxerr: 1191.853650
+iter 91 time: 0.208027 maxerr: 1185.325714
+iter 92 time: 0.207422 maxerr: 1178.903874
+iter 93 time: 0.207605 maxerr: 1172.585285
+iter 94 time: 0.207589 maxerr: 1166.367211
+iter 95 time: 0.207371 maxerr: 1160.247015
+iter 96 time: 0.207432 maxerr: 1154.222156
+iter 97 time: 0.207211 maxerr: 1148.290184
+iter 98 time: 0.207433 maxerr: 1142.448737
+iter 99 time: 0.207615 maxerr: 1136.695536
+iter 100 time: 0.207493 maxerr: 1131.028381
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 0.
+Jacobi completed successfully after restart. Exiting.
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make
+[?2004l../../../bin/ampicxx  -c jacobi.C 
+../../../bin/ampicxx  -o jacobi jacobi.o -lm
+../../../bin/ampicxx  -o jacobi.pup jacobi.o -memory default -lm
+../../../bin/ampicxx  -c -tlsglobals jacobi.C -o jacobi.tls.o
+../../../bin/ampicxx  -o jacobi.tls jacobi.tls.o -tlsglobals
+../../../bin/ampicxx  -c -DNO_PUP jacobi.C -o jacobi.iso.o
+../../../bin/ampicxx  -o jacobi.iso jacobi.iso.o -memory isomalloc
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make[K[ykamaneh@awnode05 Cjacobi3D]$ make./script.sh
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 42195
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 42195 19928 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 42195 19928 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=56860)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=41380)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=40865)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=55605)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=55472)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=60949)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=45298)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=54792)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.428 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.803216 maxerr: 16040.200000
+iter 2 time: 0.785076 maxerr: 13473.768000
+iter 3 time: 0.399601 maxerr: 11728.594240
+iter 4 time: 0.775168 maxerr: 10476.175424
+iter 5 time: 0.399236 maxerr: 9535.177733
+iter 6 time: 0.774240 maxerr: 8800.795474
+iter 7 time: 0.774014 maxerr: 8209.632243
+iter 8 time: 0.505571 maxerr: 7721.632881
+iter 9 time: 0.781036 maxerr: 7310.446113
+CCS shr_exp handler called on 0 with 'client message'.
+iter 10 time: 0.773549 maxerr: 6958.090048
+Shrink requested.
+iter 11 time: 0.773893 maxerr: 6651.888006
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 18.861777s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+Jacobi exited with code 102. Restarting with 7 nodes.
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 33521
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 33521 20000 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 33521 20000 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 2
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=34234)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=39807)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=52304)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=49777)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=56606)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=43225)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=47792)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.299 seconds.
+Charm++> Running in non-SMP mode: 7 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 12 time: 16.046511 maxerr: 6382.643713
+iter 13 time: 0.802755 maxerr: 6143.516529
+iter 14 time: 0.868696 maxerr: 5929.305478
+iter 15 time: 0.866029 maxerr: 5735.979779
+iter 16 time: 1.171968 maxerr: 5560.362589
+iter 17 time: 0.807450 maxerr: 5399.912656
+iter 18 time: 0.808447 maxerr: 5252.570230
+iter 19 time: 0.808010 maxerr: 5116.646119
+iter 20 time: 1.173493 maxerr: 4990.740369
+iter 21 time: 0.806909 maxerr: 4873.681690
+iter 22 time: 0.804687 maxerr: 4764.481662
+iter 23 time: 0.803967 maxerr: 4662.299647
+iter 24 time: 0.803787 maxerr: 4566.415586
+iter 25 time: 0.799278 maxerr: 4476.208666
+iter 26 time: 0.798922 maxerr: 4391.140414
+CCS shr_exp handler called on 0 with 'client message'.
+iter 27 time: 0.800472 maxerr: 4310.741184
+iter 28 time: 0.805175 maxerr: 4234.599256
+iter 29 time: 0.807334 maxerr: 4162.351970
+iter 30 time: 0.807451 maxerr: 4093.678461
+iter 31 time: 0.807646 maxerr: 4028.293669
+iter 32 time: 0.807650 maxerr: 3965.943365
+iter 33 time: 0.804203 maxerr: 3906.399994
+iter 34 time: 0.804280 maxerr: 3849.459181
+iter 35 time: 0.803498 maxerr: 3794.936787
+iter 36 time: 0.803324 maxerr: 3742.666401
+iter 37 time: 0.797963 maxerr: 3692.497209
+iter 38 time: 0.798652 maxerr: 3644.292161
+iter 39 time: 0.810029 maxerr: 3597.926398
+iter 40 time: 0.800786 maxerr: 3553.285896
+iter 41 time: 0.806431 maxerr: 3510.266283
+CCS shr_exp handler called on 0 with 'client message'.
+iter 42 time: 0.809000 maxerr: 3468.771816
+Expand requested.
+iter 43 time: 0.808932 maxerr: 3428.714483
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 23.557982s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make
+[?2004lmake: Nothing to be done for 'all'.
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ makre[K[Ke clean
+[?2004lrm -f *.o jacobi *~ moduleinit.C charmrun conv-host jacobi-cpp jacobi.iso jacobi-get jacobi.tls ampirun
+rm -rf 40 80 120
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make clean[K./script.sh
+[?2004lnodes file created successfully!
+./script.sh: line 28: ./charmrun: No such file or directory
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ make
+[?2004l../../../bin/ampicxx  -c jacobi.C 
+../../../bin/ampicxx  -o jacobi jacobi.o -lm
+../../../bin/ampicxx  -o jacobi.pup jacobi.o -memory default -lm
+../../../bin/ampicxx  -c jacobi-get.C
+../../../bin/ampicxx  -o jacobi-get jacobi-get.o -lm
+../../../bin/ampicxx  -c -tlsglobals jacobi.C -o jacobi.tls.o
+../../../bin/ampicxx  -o jacobi.tls jacobi.tls.o -tlsglobals
+../../../bin/ampicxx  -c -DNO_PUP jacobi.C -o jacobi.iso.o
+../../../bin/ampicxx  -o jacobi.iso jacobi.iso.o -memory isomalloc
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ make./script.sh
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 43525
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 43525 20771 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 43525 20771 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=40056)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=48786)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=53940)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=44707)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=48325)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=48454)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=35734)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=44075)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.442 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.804251 maxerr: 16040.200000
+iter 2 time: 0.770375 maxerr: 13473.768000
+iter 3 time: 0.405574 maxerr: 11728.594240
+iter 4 time: 0.785694 maxerr: 10476.175424
+iter 5 time: 0.779087 maxerr: 9535.177733
+iter 6 time: 0.772083 maxerr: 8800.795474
+iter 7 time: 0.398049 maxerr: 8209.632243
+iter 8 time: 0.397226 maxerr: 7721.632881
+iter 9 time: 0.399187 maxerr: 7310.446113
+iter 10 time: 0.772369 maxerr: 6958.090048
+iter 11 time: 0.772021 maxerr: 6651.888006
+CCS shr_exp handler called on 0 with 'client message'.
+iter 12 time: 0.397679 maxerr: 6382.643713
+Shrink requested.
+iter 13 time: 0.771215 maxerr: 6143.516529
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 18.883357s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+Jacobi exited with code 102. Restarting with 6 nodes.
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 45115
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 45115 20819 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 45115 20819 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 2
+Charmrun> Instructing host "awnode06" to fork() x 2
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=57103)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=44878)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=58023)
+Charmrun> client 3 connected (IP=172.18.16.94 data_port=51366)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=43352)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=49198)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.299 seconds.
+Charm++> Running in non-SMP mode: 6 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 14 time: 16.281534 maxerr: 5929.305478
+iter 15 time: 1.192951 maxerr: 5735.979779
+iter 16 time: 1.192131 maxerr: 5560.362589
+iter 17 time: 1.625151 maxerr: 5399.912656
+iter 18 time: 1.204009 maxerr: 5252.570230
+iter 19 time: 1.210414 maxerr: 5116.646119
+iter 20 time: 1.200791 maxerr: 4990.740369
+iter 21 time: 1.201134 maxerr: 4873.681690
+CCS shr_exp handler called on 0 with 'client message'.
+iter 22 time: 1.199783 maxerr: 4764.481662
+Expand requested.
+iter 23 time: 1.196692 maxerr: 4662.299647
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 23.568144s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [7m./charmrun +p2 ./jacobi 1 1 2 33 +balancer[27m[7m [27m[7mGreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +resta[27m[7mr[27m[7mt log[27m[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./charmrun +p2 ./jacobi 1 1 2 33 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ./jacobi 1 1 2 33 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart[1P log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C6 ./jacobi 1 1 2 33 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C 33 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart[1P log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C6 33 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart[1P log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart [1Plog[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +restart log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0 +balancer GreedyLB ++nodelist ./nodes ++server ++server-port 1234 ++verbose +resta[1@r[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ++server ++server-port 1234 ++verbose +restar[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ++server ++server-port 1234 ++verbose +restart[1P log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ++server ++server-port 1234 ++verbose +restart [1Plog[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ++server ++server-port 1234 ++verbose +restart l[1Pog[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ++server ++server-port 1234 ++verbose +restart lo[1Pg[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm ++server ++server-port 1234 ++verbose +restart log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cy ++server ++server-port 1234 ++verbose +restart log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn ++server ++server-port 1234 ++verbose +restart log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co ++server ++server-port 1234 ++verbose +restart log[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cd ++server ++server-port 1234 ++verbose +resta[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce ++server ++server-port 1234 ++verbose +rest[1@a[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl ++server ++server-port 1234 ++verbose +res[1@t[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci ++server ++server-port 1234 ++verbose +re[1@s[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs ++server ++server-port 1234 ++verbose +r[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct ++server ++server-port 1234 ++verbose +[1@r[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+[?2004lCharmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 44309
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 44309 21192 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 44309 21192 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 2
+Charmrun> Instructing host "awnode06" to fork() x 2
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=60433)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=41280)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=55467)
+Charmrun> client 3 connected (IP=172.18.16.94 data_port=40522)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=38256)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=55798)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.473 seconds.
+Charm++> Running in non-SMP mode: 6 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 24 time: 16.966483 maxerr: 4566.415586
+iter 25 time: 1.210522 maxerr: 4476.208666
+iter 26 time: 1.208650 maxerr: 4391.140414
+iter 27 time: 1.211900 maxerr: 4310.741184
+iter 28 time: 1.371974 maxerr: 4234.599256
+iter 29 time: 1.598583 maxerr: 4162.351970
+iter 30 time: 1.212398 maxerr: 4093.678461
+iter 31 time: 1.209009 maxerr: 4028.293669
+iter 32 time: 1.210925 maxerr: 3965.943365
+iter 33 time: 1.208559 maxerr: 3906.399994
+iter 34 time: 1.213592 maxerr: 3849.459181
+iter 35 time: 1.213176 maxerr: 3794.936787
+iter 36 time: 1.211787 maxerr: 3742.666401
+^C
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ [K[ykamaneh@awnode05 Cjacobi3D]$ ma[K[K./charmrun +p6 ./jacobi 1 1 6 100 +balancer GreedyLB ++nodelist ./mynodelist ++server ++server-port 1234 ++verbose +restart log[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cscript.sh[K
+[K
+[K[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lnodes file created successfully!
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 32927
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 32927 21261 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 32927 21261 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=49093)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=33409)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=50506)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=42822)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=33345)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=35727)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=51486)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=58202)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.431 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB in LEGACY MODE support
+[0] TreeLB: Using PE_Root tree with: Greedy 
+Number of Processors detected in the file: 8
+CCS Handlers registered.  Waiting for net requests...
+iter 1 time: 0.788782 maxerr: 16040.200000
+iter 2 time: 0.406412 maxerr: 13473.768000
+iter 3 time: 0.405710 maxerr: 11728.594240
+iter 4 time: 0.406283 maxerr: 10476.175424
+iter 5 time: 0.781811 maxerr: 9535.177733
+iter 6 time: 0.788633 maxerr: 8800.795474
+iter 7 time: 0.426701 maxerr: 8209.632243
+iter 8 time: 0.524782 maxerr: 7721.632881
+iter 9 time: 0.475326 maxerr: 7310.446113
+iter 10 time: 0.782407 maxerr: 6958.090048
+iter 11 time: 0.399686 maxerr: 6651.888006
+iter 12 time: 0.772101 maxerr: 6382.643713
+CCS shr_exp handler called on 0 with 'client message'.
+iter 13 time: 0.783872 maxerr: 6143.516529
+Shrink requested.
+iter 14 time: 0.780746 maxerr: 5929.305478
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 18.905511s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+Jacobi exited with code 102. Restarting with 7 nodes.
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 44705
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 44705 21591 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 44705 21591 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentic

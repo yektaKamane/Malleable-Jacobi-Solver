@@ -15,8 +15,8 @@ typedef enum {
 } ExitCode;
 
 #define DIMX 200
-#define DIMY 200
-#define DIMZ 200
+#define DIMY 400
+#define DIMZ 400
 
 #define CHKPT_TO_FILE 1
 
