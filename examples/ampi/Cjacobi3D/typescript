@@ -1040,4 +1040,149 @@ Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -
 Charmrun> remote shell (awnode05:0) started
 Charmrun> Sending "1 172.18.16.71 44705 21591 0" to client 1.
 Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
-Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentic
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 2
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=40401)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=40251)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=52932)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=52439)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=48217)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=60213)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=40311)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.303 seconds.
+Charm++> Running in non-SMP mode: 7 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 15 time: 17.209827 maxerr: 5735.979779
+iter 16 time: 1.159902 maxerr: 5560.362589
+iter 17 time: 0.800849 maxerr: 5399.912656
+iter 18 time: 0.806025 maxerr: 5252.570230
+iter 19 time: 1.172722 maxerr: 5116.646119
+iter 20 time: 0.808295 maxerr: 4990.740369
+iter 21 time: 0.805122 maxerr: 4873.681690
+iter 22 time: 0.804817 maxerr: 4764.481662
+iter 23 time: 0.804577 maxerr: 4662.299647
+iter 24 time: 0.804435 maxerr: 4566.415586
+CCS shr_exp handler called on 0 with 'client message'.
+iter 25 time: 0.804039 maxerr: 4476.208666
+Expand requested.
+iter 26 time: 0.804706 maxerr: 4391.140414
+[0] Checkpoint starting in log
+Checkpoint to disk finished in 23.562483s, sending out the cb...
+CCS Handlers re-registered after checkpoint restart.
+[Partition 0][Node 0] End of program
+Charmrun> Graceful exit with exit code 102.
+Jacobi exited with code 102. Restarting with 8 nodes.
+Charmrun> scalable start enabled. 
+Charmrun> charmrun started...
+Charmrun> using ./mynodelist as nodesfile
+Charmrun> added host "awnode05", IP:172.18.16.71
+Charmrun> added host "awnode06", IP:172.18.16.94
+Charmrun> Charmrun = 172.18.16.71, port = 46463
+ccs: 2
+ccs: Server IP = 172.18.16.71, Server port = 1234 $
+Charmrun> Sending "0 172.18.16.71 46463 21640 0" to client 0.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 0.
+Charmrun> Starting ssh awnode05 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode05:0) started
+Charmrun> Sending "1 172.18.16.71 46463 21640 0" to client 1.
+Charmrun> find the node program "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D/./jacobi" at "/home/ykamaneh/charm/charm/examples/ampi/Cjacobi3D" for 1.
+Charmrun> Starting ssh awnode06 -l ykamaneh -o KbdInteractiveAuthentication=no -o PasswordAuthentication=no -o NoHostAuthenticationForLocalhost=yes /bin/bash -f
+Charmrun> remote shell (awnode06:1) started
+Charmrun> node programs all started
+Charmrun remote shell(awnode05.0)> remote responding...
+Charmrun remote shell(awnode05.0)> starting node-program...
+Charmrun remote shell(awnode05.0)> remote shell phase successful.
+Charmrun remote shell(awnode06.1)> remote responding...
+Charmrun remote shell(awnode06.1)> starting node-program...
+Charmrun remote shell(awnode06.1)> remote shell phase successful.
+Charmrun> Waiting for 0-th client to connect.
+Charmrun> Waiting for 1-th client to connect.
+Charmrun> Instructing host "awnode05" to fork() x 3
+Charmrun> Instructing host "awnode06" to fork() x 3
+Charmrun> Waiting for 2-th client to connect.
+Charmrun> Waiting for 3-th client to connect.
+Charmrun> Waiting for 4-th client to connect.
+Charmrun> Waiting for 5-th client to connect.
+Charmrun> Waiting for 6-th client to connect.
+Charmrun> Waiting for 7-th client to connect.
+Charmrun> All clients connected.
+Charmrun> client 0 connected (IP=172.18.16.71 data_port=58807)
+Charmrun> client 1 connected (IP=172.18.16.71 data_port=46769)
+Charmrun> client 2 connected (IP=172.18.16.71 data_port=32791)
+Charmrun> client 3 connected (IP=172.18.16.71 data_port=56475)
+Charmrun> client 4 connected (IP=172.18.16.94 data_port=59461)
+Charmrun> client 5 connected (IP=172.18.16.94 data_port=42581)
+Charmrun> client 6 connected (IP=172.18.16.94 data_port=60912)
+Charmrun> client 7 connected (IP=172.18.16.94 data_port=44061)
+Charmrun> IP tables sent.
+Charmrun> node programs all connected
+Charmrun> started all node programs in 1.326 seconds.
+Charm++> Running in non-SMP mode: 8 processes (PEs)
+Converse/Charm++ Commit ID: v8.0.1-devel-12-g1a877e8fe
+Charm++ built without optimization.
+Do not use for performance benchmarking (build with --with-production to do so).
+Charm++ built with internal error checking enabled.
+Do not use for performance benchmarking (build without --enable-error-checking to do so).
+Isomalloc> Synchronized global address space.
+Charm++> scheduler running in netpoll mode.
+CharmLB> Load balancer assumes all CPUs are same.
+Charm++> Running on 2 hosts (2 sockets x 32 cores x 2 PUs = 128-way SMP)
+Charm++> cpu topology info is gathered in 0.001 seconds.
+[0] TreeLB: Using PE_Root tree with: Greedy 
+[0]CkRestartMain done. sending out callback.
+CCS Handlers re-registered after checkpoint restart.
+iter 27 time: 15.501691 maxerr: 4310.741184
+iter 28 time: 1.151444 maxerr: 4234.599256
+iter 29 time: 1.152069 maxerr: 4162.351970
+iter 30 time: 1.158572 maxerr: 4093.678461
+iter 31 time: 1.160361 maxerr: 4028.293669
+iter 32 time: 1.161332 maxerr: 3965.943365
+iter 33 time: 1.161645 maxerr: 3906.399994
+iter 34 time: 1.161104 maxerr: 3849.459181
+^C
+]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ git add .
+[?2004l]0;ykamaneh@asvsys01:~/charm/charm/examples/ampi/Cjacobi3D[?2004h[ykamaneh@awnode05 Cjacobi3D]$ git commit -m "fixed the script"
+[?2004l[main 77b739b55] fixed the script
+ 27 files changed, 1052 insertions(+), 18 deletions(-)
+ create mode 100644 examples/ampi/Cjacobi3D/log/MainChares.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/RO.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_0.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_1.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_2.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_3.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_4.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_5.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_6.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/Groups_7.dat
+ create mode 100644 examples/ampi/Cjacobi3D/log/sub0/NodeGroup
