@@ -4,6 +4,13 @@ CHARMBASE=../../../
 CHARMC=../../../bin/ampicxx $(OPTS)
 TOKENS=6
 
+
+# I added for the library
+MYLIB_DIR = ./lib
+MYLIB_INCLUDE = ./lib
+MYLIB_LDFLAGS = -L$(MYLIB_DIR) -lmylib  # No need for rpath when linking statically
+MYLIB_CFLAGS = -I$(MYLIB_INCLUDE)
+
 -include $(CHARMBASE)/include/conv-mach-opt.mak
 
 all: ampi
@@ -31,25 +38,25 @@ jacobi-cpp: jacobi-cpp.C
 	$(CHARMC) -o $@ jacobi-cpp.o -lm
 
 jacobi.o: jacobi.C
-	$(CHARMC) -c jacobi.C 
+	$(CHARMC) $(MYLIB_CFLAGS) -c jacobi.C 
 
 jacobi: jacobi.o
-	$(CHARMC) -o $@ $^ -lm
+	$(CHARMC) -o $@ $^ $(MYLIB_LDFLAGS) -lm
 
 jacobi.pup: jacobi.o
-	$(CHARMC) -o $@ $^ -memory default -lm
+	$(CHARMC) -o $@ $^ -memory default $(MYLIB_LDFLAGS) -lm
 
 jacobi.iso: jacobi.C
-	$(CHARMC) -c -DNO_PUP jacobi.C -o jacobi.iso.o
-	$(CHARMC) -o $@ jacobi.iso.o -memory isomalloc
+	$(CHARMC) $(MYLIB_CFLAGS) -c -DNO_PUP jacobi.C -o jacobi.iso.o
+	$(CHARMC) -o $@ jacobi.iso.o -memory isomalloc $(MYLIB_LDFLAGS)
 
 jacobi.tls: jacobi.C
-	$(CHARMC) -c -tlsglobals jacobi.C -o jacobi.tls.o
-	$(CHARMC) -o jacobi.tls jacobi.tls.o -tlsglobals
+	$(CHARMC) $(MYLIB_CFLAGS) -c -tlsglobals jacobi.C -o jacobi.tls.o
+	$(CHARMC) -o jacobi.tls jacobi.tls.o -tlsglobals $(MYLIB_LDFLAGS)
 
 jacobi.rose: jacobi.C
-	$(CHARMC) -roseomptlsglobals -o jacobi.rose.o -c $<
-	$(CHARMC) -roseomptlsglobals -o $@ jacobi.rose.o
+	$(CHARMC) $(MYLIB_CFLAGS) -roseomptlsglobals -o jacobi.rose.o -c $<
+	$(CHARMC) -roseomptlsglobals -o $@ jacobi.rose.o $(MYLIB_LDFLAGS) 
 
 jacobi-get: jacobi-get.C
 	$(CHARMC) -c jacobi-get.C
@@ -89,8 +96,6 @@ ifeq (1,$(CMK_SUPPORTS_MEMORY_ISOMALLOC))
 	$(call run, +p$(P) ./jacobi.iso $(P) 2 1 40 +vp$$(( $(P) * 2 )) +balancer RotateLB +LBDebug 1 )
 	$(call run, +p$(P) ./jacobi.iso $(P) 2 2 40 +vp$$(( $(P) * 4 )) +balancer RotateLB +LBDebug 1 )
 endif
-
-
 
 clean:
 	rm -f *.o jacobi *~ moduleinit.C charmrun conv-host jacobi-cpp jacobi.iso jacobi-get jacobi.tls ampirun

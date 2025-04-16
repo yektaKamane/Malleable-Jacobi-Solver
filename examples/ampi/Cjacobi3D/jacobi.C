@@ -6,6 +6,7 @@
 #include "converse.h"
 #include "conv-ccs.h"
 #include "charm++.h"
+#include "myLib.h"
 
 
 typedef enum {
@@ -23,10 +24,6 @@ typedef enum {
 #define FILE_NAME "mynodelist" 
 
 int NX, NY, NZ;
-
-int number_of_nodes_init = -1;
-int number_of_nodes_new = -1;
-int checkpoint_iteration = -1;
 
 int read_file_content(const char *filename) {
   FILE *file = fopen(filename, "r");
@@ -166,6 +163,9 @@ int main(int ac, char** av)
   chunk *cp;
   int rank, size;
   MPI_Request req[12];
+
+  // test the library
+  printHello();
 
   MPI_Init(&ac, &av);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
