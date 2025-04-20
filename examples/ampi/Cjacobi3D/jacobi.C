@@ -19,52 +19,9 @@ typedef enum {
 #define DIMY 400
 #define DIMZ 400
 
-#define CHKPT_TO_FILE 1
-
-#define FILE_NAME "mynodelist" 
 
 int NX, NY, NZ;
 
-int read_file_content(const char *filename) {
-  FILE *file = fopen(filename, "r");
-    if (!file) {
-        perror("Error opening file");
-        return -1;
-    }
-
-    char line[1024];
-    int count = 0;
-
-    while (fgets(line, sizeof(line), file)) {
-        char *ptr = strstr(line, "host");
-        if (ptr) {
-            ptr += 4; // Move past "host"
-            while (*ptr && isspace((unsigned char)*ptr)) ptr++; // Skip spaces
-            if (*ptr) count++; // If there's another name, count it
-        }
-    }
-
-    fclose(file);
-    return count;
-}
-
-
- // added handler to communicate with the client
- void handler(char *msg)
- {
-   if(CcsIsRemoteRequest()) {
-     char answer[1024];
-     char *name=msg+CmiMsgHeaderSizeBytes;
-     sprintf(answer, "hello %s from processor %d\n", name, CmiMyPe());
-     CmiPrintf("CCS shr_exp handler called on %d with '%s'.\n",CmiMyPe(),name);
-     CcsSendReply(strlen(answer)+1, answer);
-
-     int file_nodes = read_file_content(FILE_NAME);
-     if (file_nodes != number_of_nodes_init){
-        number_of_nodes_new = file_nodes;
-     }
-   }
- }
 
 class chunk {
   public:
@@ -165,24 +122,26 @@ int main(int ac, char** av)
   MPI_Request req[12];
 
   // test the library
-  printHello();
+  // printHello();
 
   MPI_Init(&ac, &av);
   MPI_Comm_rank(MPI_COMM_WORLD, &rank);
   MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+  // our library call
   number_of_nodes_init = read_file_content(FILE_NAME);
   if (number_of_nodes_init >= 0 && rank==0) {
     printf("Number of Processors detected in the file: %d\n", number_of_nodes_init);
   }
 
+
+  // should this be as a part of the library too?
   #ifdef AMPI
+
     CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
     if (!rank)
       CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
-  #endif
 
-  #ifdef AMPI
     MPI_Info chkpt_info;
     MPI_Info_create(&chkpt_info);
     #if CHKPT_TO_FILE
@@ -234,6 +193,9 @@ int main(int ac, char** av)
   starttime = MPI_Wtime();
 
   for(iter=1; iter<=niter; iter++) {
+
+    // The following up until maxiter all go into the lib
+    // make a function that takes the "iter" and as argument
     // Before checking for shrink/expand, synchronize the value across all ranks
     MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
 
@@ -314,6 +276,8 @@ int main(int ac, char** av)
       printf("iter %d time: %lf maxerr: %lf\n", iter, itertime / size, maxerr);
     starttime = MPI_Wtime();
 
+
+  // again library call
   #ifdef AMPI
     if (iter == checkpoint_iteration){
       AMPI_Migrate(chkpt_info);
