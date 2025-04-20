@@ -9,11 +9,13 @@
 #include "myLib.h"
 
 
-typedef enum {
-  SUCCESS = 0,
-  FAILURE = 101,
-  RERUN = 102
-} ExitCode;
+// typedef enum {
+//   SUCCESS = 0,
+//   FAILURE = 101,
+//   RERUN = 102
+// } ExitCode;
+
+MPI_Info chkpt_info;
 
 #define DIMX 200
 #define DIMY 400
@@ -136,13 +138,14 @@ int main(int ac, char** av)
 
 
   // should this be as a part of the library too?
+  // I think yes because we have the checkpoint here
   #ifdef AMPI
 
     CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
     if (!rank)
       CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
 
-    MPI_Info chkpt_info;
+    // MPI_Info chkpt_info;
     MPI_Info_create(&chkpt_info);
     #if CHKPT_TO_FILE
       MPI_Info_set(chkpt_info, "ampi_checkpoint", "to_file=log");
@@ -196,30 +199,8 @@ int main(int ac, char** av)
 
     // The following up until maxiter all go into the lib
     // make a function that takes the "iter" and as argument
-    // Before checking for shrink/expand, synchronize the value across all ranks
-    MPI_Bcast(&number_of_nodes_new, 1, MPI_INT, 0, MPI_COMM_WORLD);
-
-    // check for a change in the number of nodes
-    if (number_of_nodes_new != -1 && number_of_nodes_new != number_of_nodes_init){
-      if (number_of_nodes_new > number_of_nodes_init){
-        if (rank == 0) printf("Expand requested.\n");
-      }
-      else {
-        if(rank == 0) printf("Shrink requested.\n");
-      }
-
-    checkpoint_iteration = iter;
-    MPI_Barrier(MPI_COMM_WORLD);
-    
-    }
-
-    if(iter == (checkpoint_iteration+1)){
-      #ifdef AMPI
-      // put the barrier here so all the nodes exit together
-        MPI_Barrier(MPI_COMM_WORLD);
-        CkExit(RERUN);
-      #endif
-    }
+    check_nodes_change(iter, rank);
+    exit_with_rerun(iter);
 
     maxerr = 0.0;
     copyout(cp->sbxm, cp->t, 1, 1, 1, DIMY, 1, DIMZ);
@@ -278,15 +259,8 @@ int main(int ac, char** av)
 
 
   // again library call
-  #ifdef AMPI
-    if (iter == checkpoint_iteration){
-      AMPI_Migrate(chkpt_info);
-      CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
-      if (!rank)
-        CmiPrintf("CCS Handlers re-registered after checkpoint restart.\n");
-      number_of_nodes_init = read_file_content(FILE_NAME);
-    }
-  #endif
+  // later on check if this call can be brought up in the beginning of the loop
+  restart_with_rerun(iter, rank);
 
   }
   MPI_Info_free(&chkpt_info);
