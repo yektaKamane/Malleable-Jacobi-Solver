@@ -136,22 +136,8 @@ int main(int ac, char** av)
     printf("Number of Processors detected in the file: %d\n", number_of_nodes_init);
   }
 
-
-  // should this be as a part of the library too?
-  // I think yes because we have the checkpoint here
-  #ifdef AMPI
-
-    CcsRegisterHandler("check_shr_exp_", (CmiHandler)handler);
-    if (!rank)
-      CmiPrintf("CCS Handlers registered.  Waiting for net requests...\n");
-
-    // MPI_Info chkpt_info;
-    MPI_Info_create(&chkpt_info);
-    #if CHKPT_TO_FILE
-      MPI_Info_set(chkpt_info, "ampi_checkpoint", "to_file=log");
-    #endif
-
-  #endif
+  // lib call
+  create_handler(rank);
 
   if (ac < 4) {
     if (rank == 0)
